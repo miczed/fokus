@@ -1,0 +1,177 @@
+/* app css stylesheet */
+@import 'icons';
+
+$font-family: 'Roboto', sans-serif;
+$p-font-family: 'Lora', serif;
+$line-height: 1.7rem;
+
+$background-light: #F2F2F2;
+$textcolor-main: #3D3D3D;
+$border-color: #A9A9A9;
+$button-color: #CCCCCC;
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  font-family: $font-family;
+  background: $background-light;
+  height: 100%;
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+ border-bottom: 1px solid $border-color;
+}
+.menu {
+  list-style: none;
+  padding: 0 1em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li.hide {
+   display: none;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+button {
+  background: $button-color;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 0px;
+  color: $textcolor-main;
+  box-shadow: none;
+  padding: 0.25em 0.5em;
+  font-size: 0.9rem;
+}
+button.fill-width {
+  width: 100%;
+}
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+p.status {
+   color: red;
+}
+
+p.status.good, p.good {
+   color: green;
+}
+
+form label {
+   display: block;
+   margin: 15px 0;
+}
+
+form label span {
+   display: block;
+   font-weight: bold;
+}
+
+.error {
+   color: red;
+}
+
+fieldset {
+   float: left;
+   margin-right: 25px;
+   padding: 25px;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.navigation, .spacer {
+  flex: 0 0 10em;
+}
+.navigation {
+    order: -1;
+    border-right: 1px solid $border-color;
+    padding: 1rem;
+    font-family: $p-font-family;
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      li span {
+        color: $border-color;
+        padding-right: 0.2em;
+      }
+    }
+}
+
+.view {
+  display: flex;
+  flex: 1;
+}
+
+.editor {
+  padding: 1rem 5em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  input.title {
+    border: 0px;
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: $font-family;
+    color: $textcolor-main;
+    background: $background-light;
+    flex: 0 2em;
+  }
+  .markdown {
+    flex: 1;
+    border: 0px;
+    width: 100%;
+    font-family: $p-font-family;
+    color: $textcolor-main;
+    line-height: $line-height;
+    background: $background-light;
+  }
+  .preview {
+    flex: 1;
+  }
+}
+
+.noFocus:focus {
+    outline: none;
+}
+
+.CodeMirror {
+  background: transparent;
+  font-family: $p-font-family;
+  color: $textcolor-main;
+  height: auto;
+  max-height: 100%;
+}
+.cm-s-default .cm-header {
+  color: inherit;
+  font-family: $font-family;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.cm-s-default .cm-variable-2 {
+  color: inherit;
+}

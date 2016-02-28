@@ -1,0 +1,17 @@
+	<nav class="navigation">
+		<h3>Notizen:</h3>
+		<ul id="notes" ng-show="notes.length" >
+			<li ng-click="loadNote($index)" ng-repeat="note in notes"><span class="icon-file"></span> {{note.title}}
+			</li>
+		</ul>
+		<button class="fill-width" ng-click="newNote= blankNote;"><span class="icon-file-new"></span>Neue Notiz</button>
+	</nav>
+	<div class="editor" >
+		<input class="title noFocus" placeholder="Title" ng-model="newNote.title">
+		<div class="markdown noFocus" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newNote.markdown">Start writing awesome code.</div>
+		<div  class="preview" marked="newNote.markdown"></div>
+		<button type="submit" ng-click="addNote(newNote);">{{ newNote.$id ? 'Save' : 'Create New' }}</button>
+	</div>
+	<div class="spacer"></div>
+
+
