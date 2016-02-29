@@ -9,7 +9,8 @@ angular.module('myApp', [
   'myApp.chat',
   'myApp.login',
   'hc.marked',
-  'ui.codemirror'
+  'ui.codemirror',
+  'angular-medium-editor'
   ])
 
 .config(['$routeProvider', function ($routeProvider) {

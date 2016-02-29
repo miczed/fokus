@@ -7,9 +7,14 @@
 		<button class="fill-width" ng-click="newNote= blankNote;"><span class="icon-file-new"></span>Neue Notiz</button>
 	</nav>
 	<div class="editor" >
+		<button ng-click="viewMode = 'markdown';">Markdown</button>
+		<button ng-click="viewMode = 'html';">HTML</button>
+		<button ng-click="viewMode = 'preview';">Preview</button>
+
 		<input class="title noFocus" placeholder="Title" ng-model="newNote.title">
-		<div class="markdown noFocus" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newNote.markdown">Start writing awesome code.</div>
-		<div ng-show="preview" class="preview" marked="newNote.markdown"></div>
+		<div ng-show="viewMode == 'markdown'" class="markdown noFocus" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newNote.markdown">Start writing awesome code.</div>
+		<medium-editor ng-show="viewMode == 'html'" class="preview" ng-model="newNote.markdown"></medium-editor>
+		<div ng-show="viewMode == 'preview'" class="preview" marked="newNote.markdown"></div>
 		<button type="submit" ng-click="addNote(newNote);">{{ newNote.$id ? 'Save' : 'Create New' }}</button>
 		<div class="meta">
 			{{ newNote.markdown.length }} Zeichen 

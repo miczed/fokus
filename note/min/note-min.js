@@ -5,7 +5,7 @@
   var app = angular.module('myApp.chat', ['ngRoute', 'firebase.utils', 'firebase', 'firebase.auth']);
 
   app.controller('NoteCtrl', ['$scope', 'noteList' , 'user', 'FBURL', function($scope, noteList, user, FBURL) {
-
+    $scope.viewMode = 'markdown';
     $scope.editorOptions = {
       lineWrapping : true,
       lineNumbers: false,
