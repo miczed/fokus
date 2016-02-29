@@ -9,8 +9,13 @@
 	<div class="editor" >
 		<input class="title noFocus" placeholder="Title" ng-model="newNote.title">
 		<div class="markdown noFocus" ui-codemirror ui-codemirror-opts="editorOptions" ng-model="newNote.markdown">Start writing awesome code.</div>
-		<div  class="preview" marked="newNote.markdown"></div>
+		<div ng-show="preview" class="preview" marked="newNote.markdown"></div>
 		<button type="submit" ng-click="addNote(newNote);">{{ newNote.$id ? 'Save' : 'Create New' }}</button>
+		<div class="meta">
+			{{ newNote.markdown.length }} Zeichen 
+			&middot;
+			{{ newNote.updated ? (newNote.updated | date:'dd-MM-yyyy HH:mm') : "nie" }} zuletzt gespeichert
+		</div>
 	</div>
 	<div class="spacer"></div>
 

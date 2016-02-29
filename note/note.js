@@ -50,6 +50,7 @@
     }
     var _getByUser = function(uid) {
       var fb = new Firebase(FBURL);
+      console.log(fb.child('users/'+uid+'/notes'));
       var norm = new Firebase.util.NormalizedCollection( [fb.child('users/'+uid+'/notes'),'user'], [ fb.child('notes'), 'notes' ]);
       
       norm = norm.select(
